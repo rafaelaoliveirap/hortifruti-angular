@@ -1,0 +1,50 @@
+<div class="container">
+    <h2 class="d-flex justify-content-center py-5">Bem vindo a nossa Loja!</h2>
+<div>
+    <div class="form-group">
+      <label for="formGroupExampleInput">Nome</label>
+      <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Abacaxi" [(ngModel)]="produto.nome">
+    </div>
+    <div class="form-group">
+      <label for="formGroupExampleInput2">Preço</label>
+      <input type="number" class="form-control" id="formGroupExampleInput2" placeholder="5" [(ngModel)]="produto.preco">
+    </div>
+    <div class="form-group">
+      <label for="formGroupExampleInput">Imagem</label>
+      <input type="text" class="form-control" id="formGroupExampleInput" placeholder="www.imagemdafruta.com/morango.jpg"[(ngModel)]="produto.imagem">
+    </div>
+    <div class="form-group">
+      <label for="formGroupExampleInput2">Quantidade em estoque</label>
+      <input type="number" class="form-control" id="formGroupExampleInput2" placeholder="15" [(ngModel)]="produto.qtdEstoque">
+    </div>
+    <div>
+        <button type="button" class="btn btn-outline-info align-right" (click)= "publicar()">Publicar</button>
+    </div>
+
+</div>
+  
+
+<h2 class="d-flex justify-content-center">Produtos</h2>
+<div class="row col-12">
+
+<div class="card text-center mr-4 ml-5 my-4" style="width: 18rem;" *ngFor="let produto of listaProdutos">
+  <div class="card-body">
+    <img src="{{ produto.imagem }}" class="card-img-top" alt="Imagem de uma fruta" />
+    <h5 class="card-title">{{ produto.nome }}</h5>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">Codigo: {{ produto.id }}</li>
+    <li class="list-group-item">Preço: R{{produto.preco | currency}}</li>
+    <li class="list-group-item">Quantidade em estoque: {{ produto.qtdEstoque }}</li>
+  </ul>
+  <div class="card-body">
+    <button class="btn btn-outline-info mr-5">Editar</button>
+    <button class="btn btn-outline-danger">Apagar</button>
+  </div>
+</div>
+</div>
+</div>
+
+
+
+          
