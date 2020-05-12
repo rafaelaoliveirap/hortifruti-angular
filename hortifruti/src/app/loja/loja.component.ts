@@ -31,5 +31,5 @@ export class LojaComponent implements OnInit {
       this.findAllProdutos()
     })
   }
-
+  
 }
